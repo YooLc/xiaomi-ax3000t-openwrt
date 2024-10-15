@@ -1,0 +1,25 @@
+diff --git a/drivers/net/dsa/Kconfig b/drivers/net/dsa/Kconfig
+index f8c1d73b2..d85c7a133 100644
+--- a/drivers/net/dsa/Kconfig
++++ b/drivers/net/dsa/Kconfig
+@@ -75,6 +75,8 @@ config NET_DSA_MV88E6060
+ 	  This enables support for the Marvell 88E6060 ethernet switch
+ 	  chip.
+ 
++source "drivers/net/dsa/airoha/an8855/Kconfig"
++
+ source "drivers/net/dsa/microchip/Kconfig"
+ 
+ source "drivers/net/dsa/mv88e6xxx/Kconfig"
+diff --git a/drivers/net/dsa/Makefile b/drivers/net/dsa/Makefile
+index cb9a97340..57cf528b8 100644
+--- a/drivers/net/dsa/Makefile
++++ b/drivers/net/dsa/Makefile
+@@ -17,6 +17,7 @@ obj-$(CONFIG_NET_DSA_SMSC_LAN9303_MDIO) += lan9303_mdio.o
+ obj-$(CONFIG_NET_DSA_VITESSE_VSC73XX) += vitesse-vsc73xx-core.o
+ obj-$(CONFIG_NET_DSA_VITESSE_VSC73XX_PLATFORM) += vitesse-vsc73xx-platform.o
+ obj-$(CONFIG_NET_DSA_VITESSE_VSC73XX_SPI) += vitesse-vsc73xx-spi.o
++obj-y				+= airoha/an8855/
+ obj-y				+= b53/
+ obj-y				+= hirschmann/
+ obj-y				+= microchip/
